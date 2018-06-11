@@ -1,0 +1,25 @@
+Name: Text And Call Bookmarker
+Token: MY_UNIQUE_TOKEN
+ConditionConfigurations:
+    - Name: User Called
+      URL: usercalled
+      ConditionSourceURL: https://some/api/call
+      ConditionTrueValue:
+        Name: Value
+        Value: True
+        ActionURL: https://some/api/to/call/if/true
+      ConditionFalseValue:
+        Name: Value
+        Value: False
+        ActionURL: https://some/api/to/call/if/false
+    - Name: User Texted
+      URL: usertexted
+      ConditionSourceURL: https://some/other/api/call
+      ConditionTrueValue:
+        Name: Value
+        Value: True
+        ActionURL: https://some/other/api/to/call/if/true
+      ConditionFalseValue:
+        Name: Value
+        Value: False 
+        ActionURL: https://some/other/api/to/call/if/false
