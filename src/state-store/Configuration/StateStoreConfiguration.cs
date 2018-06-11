@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 
+// YamlDotNet.Serialization.Deserializer x = new YamlDotNet.Serialization.Deserializer();
+
+// var l = x.Deserialize<StateStoreConfiguration>(File.ReadAllText(@"C:\Users\betse\Source\Repos\state-store\src\state-store\SampleConfigurations\SampleConfiguration.yaml"));
+
 public class StateStoreConfiguration
 {
     public string Name { get; set; }

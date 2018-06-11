@@ -14,11 +14,6 @@ namespace state_store
     {
         public static void Main(string[] args)
         {
-
-            YamlDotNet.Serialization.Deserializer x = new YamlDotNet.Serialization.Deserializer();
-
-            var l = x.Deserialize<StateStoreConfiguration>(File.ReadAllText(@"C:\Users\betse\Source\Repos\state-store\src\state-store\SampleConfigurations\SampleConfiguration.yaml"));
-            
             CreateWebHostBuilder(args).Build().Run();
         }
 
