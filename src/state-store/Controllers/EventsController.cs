@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using state_store.Configuration;
+using System.Linq;
 
 namespace state_store.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/{token}/[controller]")]
     [ApiController]
     public class EventsController : ControllerBase
     {
@@ -43,10 +44,35 @@ namespace state_store.Controllers
         {
         } */
 
+        // api/TOKENVALUE/events/name
         [HttpGet("name")]
-        public string Get() 
+        public string Get(string token) 
         {
+            if (token != StateStoreConfiguration.StateStoreConfigurationInstance.Token) 
+            {
+                return null;
+            }
+
             return StateStoreConfiguration.StateStoreConfigurationInstance.Name;
+        }
+
+        // https://localhost:5001/api/MY_UNIQUE_TOKEN/events/usercalled
+        [HttpGet("{eventName}")]
+        public bool? Get(string token, string eventName) 
+        {
+            if (token != StateStoreConfiguration.StateStoreConfigurationInstance.Token) 
+            {
+                return null;
+            }
+
+            var matchingConditions = StateStoreConfiguration.StateStoreConfigurationInstance.ConditionConfigurations.Where(x => x.URL == eventName);
+
+            if (matchingConditions.Count() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
