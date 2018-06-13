@@ -6,6 +6,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <ContentWithTargetPath Include="./SampleConfigurations/SampleConfiguration.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>configuration.yaml</TargetPath>
+    </ContentWithTargetPath>
   </ItemGroup>
 
   <ItemGroup>

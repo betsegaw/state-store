@@ -15,7 +15,7 @@ namespace state_store.Configuration
                 if (stateStoreConfigurationInstance == null)
                 {
                     YamlDotNet.Serialization.Deserializer x = new YamlDotNet.Serialization.Deserializer();
-                    stateStoreConfigurationInstance = x.Deserialize<StateStoreConfiguration>(File.ReadAllText($"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/SampleConfiguration.yaml"));
+                    stateStoreConfigurationInstance = x.Deserialize<StateStoreConfiguration>(File.ReadAllText($"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/configuration.yaml"));
                 }
 
                 return stateStoreConfigurationInstance;
