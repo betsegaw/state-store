@@ -45,3 +45,7 @@ Conditions:
 ```
 
 The above basic YAML config file enables you to create a simple setup where depending on which URL you are calling, you will get different results.
+
+## Current state
+
+As of right now, there is not much working yet and this readme file is acting as a spec. Eventually, we will get to a version that is testable.
